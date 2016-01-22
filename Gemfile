@@ -37,7 +37,15 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'faker'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'selenium-webdriver' '~> 2.44'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'capybara'
 end
 
 group :development do

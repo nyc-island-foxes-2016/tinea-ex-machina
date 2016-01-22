@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160122195144) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "answers", force: :cascade do |t|
     t.string   "content",                     null: false
     t.integer  "user_id",                     null: false
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160122195144) do
     t.datetime "updated_at",       null: false
   end
 
-  add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
+  add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id", using: :btree
 
   create_table "questions", force: :cascade do |t|
     t.string   "title",      limit: 200, null: false

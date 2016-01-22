@@ -42,7 +42,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'selenium-webdriver' '~> 2.44'
+  gem 'selenium-webdriver', '~> 2.44'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'capybara'

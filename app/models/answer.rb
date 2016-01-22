@@ -1,11 +1,8 @@
 class Answer < ActiveRecord::Base
-  def change
-    create_table :answer do |t|
-      t.string :content, null: false
-      t.integer :user_id, null: false
-      t.integer :question_id, null: false
+  belongs_to :user
+  belongs_to :question
+  has_many :comments, as: :commentable
 
-      t.timestamps null: false
-    end
-  end
+  validates :content, :question_id, :user_id, presence: true
+
 end

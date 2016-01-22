@@ -1,3 +1,6 @@
 # Tinea ex Machina
 
-Team Moth: Darius Atmar, Carolina Medellin, Bernadette Maschiocchi, Peter Wood
+## Team Moth
+Darius Atmar, Carolina Medellin, Bernadette Maschiocchi, Peter Wood
+
+_Trello_Board:_ Link coming soon!

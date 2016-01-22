@@ -4,5 +4,5 @@ class Question < ActiveRecord::Base
   has_many :comments, as: :commentable
 
   validates :user_id, :content, :title, presence: true
-  validates :title, limit: 200
+  validates :title, length: { maximum: 200 }
 end

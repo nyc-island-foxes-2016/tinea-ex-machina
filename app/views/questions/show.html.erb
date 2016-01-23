@@ -1,0 +1,12 @@
+<div class="question-container">
+  <h3><%= @question.title %></h3>
+  <div class="timestamp">Posted at <%= std_format_date(@question.created_at) %></div>
+  <p><%= @question.content %></p>
+  <div class="answers-container">
+    <ul>
+      <% @question.answers.each do |answer| %>
+        <li class="answer-show"><%= answer.content %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

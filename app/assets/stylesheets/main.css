@@ -16,6 +16,9 @@ body {
   background-color: #9AC;
   font-family: Trebuchet, sans-serif;
 }
+h3 {
+  margin-top: 0;
+}
 
 .container {
   background-color: #BCE;
@@ -24,5 +27,11 @@ body {
   box-shadow: 0.25em 0.25em 0.25em #333;
   margin: 1em auto;
   padding: 1em;
-	width: 70%;
+  width: 70%;
+}
+.question-link {
+  border: 0.25em inset #B75;
+  border-radius: 0.5em;
+  margin: 0.25em 0;
+  padding: 0.5em;
 }

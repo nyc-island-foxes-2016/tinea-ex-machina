@@ -5,8 +5,17 @@ Rails.application.routes.draw do
   delete 'session' => 'sessions#destroy'
 
   resources :users, only: [:new, :create, :show]
+ 
 
-  resources :questions
+  resources :questions, only: [:new, :create, :show] do
+    resources :answers , only: [:new, :create, :edit, :update]
+    resources :comments , only: [:new, :create, :destroy, :edit, :update]
+  end
+
+  resources :answers , only: [] do
+    resources :comments , only: [:new, :create, :destroy, :edit, :update]
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -14,12 +14,13 @@
         <%= link_to current_user.username, current_user %> | 
         <%= link_to 'logout', session_path, method: :destroy %> | 
       <% else %>
-        <%= link_to 'login', new_session_path %> | 
+        <%= link_to 'login', new_session_path, id: 'login-link' %> | 
         <%= link_to 'register', new_user_path %> | 
       <% end %>
       <%= link_to 'Ask a Question', new_question_path %> | 
       <%= link_to 'Questions', questions_path %>
     </nav>
+    <%= render 'sessions/form' %>
   </header>
   <main class='container'>
     <%= yield %>

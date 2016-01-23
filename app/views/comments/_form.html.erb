@@ -1,0 +1,6 @@
+<%= form_for [@commentable, Comment.new] do |f| %>
+  <fieldset>
+    <% f.text_area :content %>
+    <% f.submit "Comment" %>
+  </fieldset>
+<% end %>

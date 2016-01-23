@@ -5,13 +5,16 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @comment = @commentable.comments.new
+    @commentable = find_commentable
+    @comment = Comment.new
   end
 
   def create
-    @comment = @commentable.comments.new(comment_params)
+    @commentable = find_commentable
+    @comment = @commentable.comments.new(params[:comment])
     @question = Question.find_by(question_id: params[:question_id])
-    if @comment.save
+   if @comment.save
+      flash[:success] = "Successfully saved comment."  
       redirect_to @question
     else
       render :new

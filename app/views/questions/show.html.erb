@@ -1,0 +1,18 @@
+<div class="question-container">
+  <h3><%= @question.title %></h3>
+  <div class="timestamp">Posted at <%= std_format_date(@question.created_at) %></div>
+  <p><%= @question.content %></p>
+  <div class="answer-form-container">
+    <%= form_for @answer do |f| %>
+      <%= f.label :content %>
+      <%= f.text_area_tag(:content, size: "24x200") %>
+    <% end %>
+  </div>
+  <div class="answers-container">
+    <ol>
+      <% @question.answers.each do |answer| %>
+        <div class="answer-show"><%= answer.content %></div>
+      <% end %>
+    </ol>
+  </div>
+</div>

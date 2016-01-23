@@ -29,6 +29,15 @@ h3 {
   padding: 1em;
   width: 70%;
 }
+.answer-show {
+  background-color: #BCE;
+  border: 2px solid black;
+  border-radius: 0.5em;
+  margin: 1em auto;
+  padding: 1em;
+  width: 70%;
+  list-style-type: none;
+}
 .question-link {
   border: 0.25em inset #B75;
   border-radius: 0.5em;

@@ -1,11 +1,13 @@
 $(document).ready(function() {
-  $('a[href="/sessions"]').on('click', function(event) {
+  $('#login-form').hide();
+
+  $('#login-link').on('click', function(event) {
     event.preventDefault();
+    var loginLink = this;
     $.ajax( {
       url: '/sessions/new'
     }).done(function(response) {
-      $('a[href="/sessions"]').hide();
-      $('header').append(response);
+      $('#login-form').toggle();
     }).fail(function(response) {
       console.log('Bad: ' + response);
     });

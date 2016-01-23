@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
   root to: 'questions#index'
   resources :sessions, only: [:new, :create, :destroy]
+  delete 'session' => 'sessions#destroy'
+
   resources :users, only: [:new, :create, :show]
+
   resources :questions
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

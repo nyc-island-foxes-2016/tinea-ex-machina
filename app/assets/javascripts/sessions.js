@@ -12,5 +12,4 @@ $(document).ready(function() {
       console.log('Bad: ' + response);
     });
   });
-
 });

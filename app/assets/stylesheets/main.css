@@ -1,0 +1,13 @@
+body {
+  background-color: #9AB;
+}
+
+.container {
+  background-color: #BCD;
+  border: 0.5em outset #336;
+  border-radius: 0.5em;
+  box-shadow: 0.25em 0.25em 0.25em #333;
+  margin: 1em auto;
+  padding: 1em;
+	width: 70%;
+}

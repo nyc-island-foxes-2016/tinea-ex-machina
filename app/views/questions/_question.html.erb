@@ -1,6 +1,7 @@
 <li>
   <div class="question-link">
-    <h3><%= link_to question.title, question_path(question) %> </h3>
+    <h3><%= link_to question.title, question_path(question) %></h3>
+    <h4><%= question.vote_count %> Vote<%= 's' if question.vote_count != 1 %></h4>
     <div class="timestamp">Posted by <%= link_to question.user.username, question.user %> at <%= std_format_date(question.created_at) %></div>
   </div>
 </li>

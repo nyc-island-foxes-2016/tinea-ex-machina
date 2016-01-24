@@ -11,7 +11,6 @@ class CommentsController < ApplicationController
 
   def create
     @commentable = find_commentable
-    binding.pry
     @comment = @commentable.comments.build(comment_params)
     @question = Question.find_by(id: params[:question_id])
    if @comment.save

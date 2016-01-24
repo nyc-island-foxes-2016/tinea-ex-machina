@@ -12,7 +12,7 @@
       <%= link_to 'Tinea ex Machina', root_path %>
     </h1>
     <nav>
-      <% if current_user %>
+      <% if current_user = User.find_by(id: session[:user_id]) %>
         <%= link_to current_user.username, current_user %> | 
         <%= link_to 'logout', '/session', method: 'delete' %> | 
       <% else %>

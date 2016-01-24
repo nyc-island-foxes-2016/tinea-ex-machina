@@ -7,6 +7,10 @@ $(document).ready(function() {
     event.preventDefault();
     $('#login-form').toggle();
   });
+  $('#register-link').on('click', function(event) {
+    event.preventDefault();
+    $('#new_user').toggle();
+  });
 
   $('header').on('submit', 'form', function(event) {
     event.preventDefault();

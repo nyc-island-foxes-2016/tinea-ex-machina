@@ -27,6 +27,13 @@ ul {
   list-style: none;
 }
 
+nav #login-form {
+  display: none;
+}
+nav #new_user {
+  display: none;
+}
+
 .container {
   background-color: #BCE;
   border: 0.5em outset #B75;

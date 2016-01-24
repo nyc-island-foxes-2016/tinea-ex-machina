@@ -13,7 +13,10 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path
+      respond_to do |format|
+        format.json {render json: @user}
+        format.html {redirect_to root_path}
+      end
     else
       render :new
     end

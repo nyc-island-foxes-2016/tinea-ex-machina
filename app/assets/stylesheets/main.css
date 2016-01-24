@@ -50,6 +50,10 @@ nav form {
   display: none;
 }
 
+#best_answer {
+  border-style: solid;
+}
+
 .container {
   background-color: #BCE;
   border: 0.5em outset #B75;

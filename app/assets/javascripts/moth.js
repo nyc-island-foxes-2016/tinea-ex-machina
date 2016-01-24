@@ -1,10 +1,13 @@
 $(document).ready(function(){
   var canvas = document.querySelector('canvas');
   var context = canvas.getContext('2d');
+
+  // body colors
   context.fillStyle = '#542';
   context.strokeStyle = '#222';
   context.lineWidth = 2;
 
+  // body
   context.beginPath();
   context.moveTo(30, 30);
   context.quadraticCurveTo(60, 20, 70, 70);
@@ -13,6 +16,19 @@ $(document).ready(function(){
   context.fill();
   context.stroke();
 
+  // right antenna
+  context.beginPath();
+  context.moveTo(40, 35);
+  context.quadraticCurveTo(30, 20, 35, 5);
+  context.stroke();
+
+  // left antenna
+  context.beginPath();
+  context.moveTo(35, 40);
+  context.quadraticCurveTo(20, 30, 5, 35);
+  context.stroke();
+
+  // wing colors
   context.fillStyle = '#EDA';
   context.strokeStyle = '#FEB';
 

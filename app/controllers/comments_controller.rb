@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
   def comment_params
     comment_params = params.require(:comment).permit(:content, :user_id)
     if current_user
-      comment_params[:user_id]=@user.id
+      comment_params[:user_id] = current_user.id
       return comment_params
     end
   end

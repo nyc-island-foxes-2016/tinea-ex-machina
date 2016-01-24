@@ -16,5 +16,8 @@
   <%= render @question.comments %>
   <%= render '/comments/form', commentable: @question %>
 
-  <%= render @question.answers %>
+  <%= render @question.best_answer if @question.best_answer %>
+  <% @question.answers.each do |answer| %>
+    <%= render answer unless answer.best? %>
+  <% end %>
 </div>

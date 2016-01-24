@@ -42,10 +42,7 @@ ul {
   list-style: none;
 }
 
-nav #login-form {
-  display: none;
-}
-nav #new_user {
+nav form {
   display: none;
 }
 

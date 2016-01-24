@@ -7,4 +7,8 @@ _Trello_Board:_ Link coming soon!
 
 ## Schema
 
-<img src="/mvp-schema.png">
+<img src="/mvp-schema.png"/>
+MVP
+
+<img src="/votes-schema.png"/>
+Polymorphic Votes Implemented

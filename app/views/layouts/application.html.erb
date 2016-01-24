@@ -8,19 +8,21 @@
 </head>
 <body>
   <header class="container">
+    <h1 id="logo">
+      <%= link_to 'Tinea ex Machina', root_path %>
+    </h1>
     <nav>
-      <h1 id="logo">
-        <%= link_to 'Tinea ex Machina', root_path %>
-      </h1>
-      <% if current_user %>
+      <% if current_user = User.find_by(id: session[:user_id]) %>
         <%= link_to current_user.username, current_user %> | 
         <%= link_to 'logout', '/session', method: 'delete' %> | 
       <% else %>
-        <%= link_to 'login', new_session_path %> | 
-        <%= link_to 'register', new_user_path %> | 
+        <%= link_to 'login', new_session_path, id: 'login-link' %> | 
+        <%= link_to 'register', new_user_path, id: 'register-link' %> | 
       <% end %>
       <%= link_to 'Ask a Question', new_question_path %> | 
       <%= link_to 'Questions', questions_path %>
+      <%= render 'sessions/form' %>
+      <%= render 'users/form' %>
     </nav>
   </header>
   <main class='container'>

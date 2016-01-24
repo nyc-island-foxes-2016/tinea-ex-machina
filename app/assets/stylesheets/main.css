@@ -27,6 +27,10 @@ ul {
   list-style: none;
 }
 
+#login-form {
+  display: none;
+}
+
 .container {
   background-color: #BCE;
   border: 0.5em outset #B75;

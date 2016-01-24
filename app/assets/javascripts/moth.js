@@ -1,4 +1,4 @@
-$(document).ready(function(){
+var drawMoth = function(){
   var canvas = document.querySelector('canvas');
   var context = canvas.getContext('2d');
 
@@ -67,4 +67,4 @@ $(document).ready(function(){
   context.quadraticCurveTo(65, 70, 45, 55);
   context.fill();
   context.stroke();
-});
+};

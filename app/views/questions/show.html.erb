@@ -1,7 +1,7 @@
 <div class="question-container">
   <h3><%= @question.title %></h3>
   <div class="timestamp">Posted by <%= link_to @question.user.username, @question.user %> at <%= std_format_date(@question.created_at) %></div>
-  <div class="vote-form-container">
+  <div class="vote-question">
     <%= render '/votes/form', votable: @question %>
   </div>
   <span class="vote-place"><%= @question.votes.count %></span>

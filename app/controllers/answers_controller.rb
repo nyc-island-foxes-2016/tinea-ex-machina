@@ -5,6 +5,12 @@ class AnswersController < ApplicationController
 		redirect_to question_path(params[:question_id])
 	end
 
+  def update
+    @answer = Answer.find(params[:id])
+    @answer.update_attribute(:best, true)
+    redirect_to @answer.question
+  end
+
   private 
 
   def answer_params

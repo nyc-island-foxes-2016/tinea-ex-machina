@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery
 
+  before_filter :generate_blank_user
+
   helper_method :current_user
   def current_user
     @user ||= User.find session[:user_id] if session[:user_id]
@@ -14,5 +16,9 @@ class ApplicationController < ActionController::Base
 
   def login user
     session[:user_id] = user.id
+  end
+
+  def generate_blank_user
+    @user = User.new
   end
 end

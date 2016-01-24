@@ -12,7 +12,6 @@ class VotesController < ApplicationController
 		if @vote.save
 			redirect_to @question
 		else
-			puts 'THIS DIDNT SAVE'
 			redirect_to @question
 		end
 	end

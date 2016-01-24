@@ -1,5 +1,4 @@
-var drawMoth = function(){
-  var canvas = document.querySelector('canvas');
+var drawMoth = function(canvas){
   var context = canvas.getContext('2d');
 
   // body colors
@@ -68,3 +67,16 @@ var drawMoth = function(){
   context.fill();
   context.stroke();
 };
+
+var ready = function(func) {
+  if(document.readyState !== 'loading') {
+    func();
+  }
+  else {
+    document.addEventListener('DOMContentLoaded', func);
+  }
+};
+
+ready(function() {
+  drawMoth(document.querySelector('canvas'));
+});

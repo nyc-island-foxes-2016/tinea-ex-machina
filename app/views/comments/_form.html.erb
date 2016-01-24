@@ -1,4 +1,4 @@
-<%= form_for [@commentable, Comment.new] do |f| %>
+<%= form_for [commentable, Comment.new] do |f| %>
   <fieldset>
     <%= f.label :content %>
     <%= f.text_area :content %>

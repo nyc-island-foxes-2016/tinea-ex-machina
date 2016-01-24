@@ -14,10 +14,25 @@ a:visited:hover{
 
 body {
   background-color: #9AC;
+  color: #225;
   font-family: Trebuchet, sans-serif;
 }
 h3 {
   margin-top: 0;
+}
+textarea {
+  background-color: #EAEAF0;
+  border: 0.125em inset #255;
+  padding: 0.5em;
+  margin: 0.25em;
+  width: 90%;
+}
+
+li {
+  list-style: none;
+  border: 0.1375em inset #B75;
+  border-radius: 0.5em;
+  padding: 0.5em;
 }
 ol {
   list-style: none;
@@ -52,9 +67,10 @@ nav #new_user {
   width: 70%;
   list-style-type: none;
 }
-.question-link {
+/*.question-link {
   border: 0.25em inset #B75;
   border-radius: 0.5em;
   margin: 0.25em 0;
   padding: 0.5em;
 }
+*/

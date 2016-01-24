@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
   def create
     @commentable = find_commentable
     @comment = @commentable.comments.build(comment_params)
-    @question = Question.find_by(id: params[:question_id])
+    @question = Question.find_by(id: params[:question_id]) || @commentable.question
    if @comment.save
       flash[:success] = "Successfully saved comment."  
       redirect_to @question

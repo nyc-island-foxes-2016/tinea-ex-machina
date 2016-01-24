@@ -1,0 +1,9 @@
+<%= form_for [@commentable, Comment.new] do |f| %>
+  <fieldset>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </fieldset>
+  <div>
+    <%= f.submit "Add Comment" %>
+  </div>
+<% end %>

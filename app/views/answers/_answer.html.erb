@@ -1,4 +1,4 @@
-<div class="answer">
+<div class="answer" id="<%= "best_answer" if answer.best? %>">
   <a href="/answers/<%= answer.id %>/question" data-method="put" rel="nofollow">This is the best!</a>
   <h4>Posted by: <%= link_to answer.user.username, answer.user %></h4>
   <p><%= answer.content %></p>

@@ -9,11 +9,8 @@
       <%= f.submit "Post Answer" %>
     <% end %>
   </div>
-  <div class="answers-container">
-    <ol>
-      <% @question.answers.each do |answer| %>
-        <div class="answer-show"><%= answer.content %></div>
-      <% end %>
-    </ol>
-  </div>
+  <%= render @question.comments %>
+  <%= render '/comments/form', commentable: @question %>
+
+  <%= render @question.answers %>
 </div>

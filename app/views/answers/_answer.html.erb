@@ -2,3 +2,6 @@
   <h4>Posted by: <%= answer.user.username %></h4>
   <%= answer.content %>
 </div>
+<%= render answer.comments %>
+
+<%= render 'comments/form', commentable: answer %>

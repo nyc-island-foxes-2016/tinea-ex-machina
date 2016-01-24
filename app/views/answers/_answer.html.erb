@@ -1,4 +1,5 @@
 <div class="answer">
+  <%= link_to 'This is the best!', "/questions/#{answer.question.id}/answers/#{answer.id}", method: 'patch' %>
   <h4>Posted by: <%= link_to answer.user.username, answer.user %></h4>
   <p><%= answer.content %></p>
   <%= render answer.comments %>

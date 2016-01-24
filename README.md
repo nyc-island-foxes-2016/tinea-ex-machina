@@ -1,14 +1,15 @@
 # Tinea ex Machina
+<img src="/moth-icon.png"/>
 
 ## Team Moth
 Darius Atmar, Carolina Medellin, Bernadette Maschiocchi, Peter Wood
 
-_Trello_Board:_ Link coming soon!
+<a href="https://trello.com/b/BaMZOWt1/stackoverflow">_Trello_Board_</a>
 
-## Schema
+## Schemas
 
+### MVP
 <img src="/mvp-schema.png"/>
-MVP
 
+### Polymorphic Votes Implemented
 <img src="/votes-schema.png"/>
-Polymorphic Votes Implemented

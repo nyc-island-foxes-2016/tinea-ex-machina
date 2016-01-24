@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :answers , only: [] do
+    resource :question, only: [:update]
     resources :comments , only: [:new, :create, :destroy, :edit, :update]
     resources :votes, only: [:create]
   end

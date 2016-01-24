@@ -10,6 +10,10 @@ class QuestionsController < ApplicationController
     @answer = Answer.new
   end
 
+  def new
+    @question = Question.new
+  end
+
   private 
 
   def question_params

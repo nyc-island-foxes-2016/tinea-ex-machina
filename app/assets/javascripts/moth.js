@@ -67,4 +67,4 @@ var drawMoth = function(){
   context.quadraticCurveTo(65, 70, 45, 55);
   context.fill();
   context.stroke();
-});
+};

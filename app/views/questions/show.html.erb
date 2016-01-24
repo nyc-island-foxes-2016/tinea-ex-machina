@@ -10,6 +10,7 @@
     <% end %>
   </div>
   <%= render '/comments/form', commentable: @question %>
+  <%= render @question.comments %>
 
   <%= render @question.answers %>
 </div>

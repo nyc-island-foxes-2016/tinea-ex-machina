@@ -9,8 +9,8 @@
       <%= f.submit "Post Answer" %>
     <% end %>
   </div>
-  <%= render '/comments/form', commentable: @question %>
   <%= render @question.comments %>
+  <%= render '/comments/form', commentable: @question %>
 
   <%= render @question.answers %>
 </div>

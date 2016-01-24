@@ -27,10 +27,10 @@ ul {
   list-style: none;
 }
 
-#login-form {
+nav #login-form {
   display: none;
 }
-#new_user {
+nav #new_user {
   display: none;
 }
 

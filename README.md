@@ -1,9 +1,9 @@
-# Tinea ex Machina
+# Tinea ex Machina <img src"/moth-icon.png"/>
 
 ## Team Moth
 Darius Atmar, Carolina Medellin, Bernadette Maschiocchi, Peter Wood
 
-_Trello_Board:_ Link coming soon!
+<a href="https://trello.com/b/BaMZOWt1/stackoverflow">_Trello_Board:_</a>
 
 ## Schema
 

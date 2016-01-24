@@ -17,6 +17,10 @@ class QuestionsController < ApplicationController
     redirect_to @question
   end
 
+  def best_answer
+    Answer.find(self.best_answer_id)
+  end
+
   private 
 
   def question_params

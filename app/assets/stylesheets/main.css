@@ -19,6 +19,13 @@ body {
 h3 {
   margin-top: 0;
 }
+ol {
+  list-style: none;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
 
 .container {
   background-color: #BCE;

@@ -14,10 +14,29 @@ a:visited:hover{
 
 body {
   background-color: #9AC;
+  color: #225;
   font-family: Trebuchet, sans-serif;
 }
-h3 {
+h3, h4 {
   margin-top: 0;
+}
+fieldset {
+  border-radius: 0.5em;
+}
+textarea {
+  background-color: #EAEAF0;
+  border: 0.125em inset #255;
+  padding: 0.5em;
+  margin: 0.25em;
+  width: 90%;
+}
+
+li {
+  list-style: none;
+  border: 0.1375em inset #B75;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  margin: 0.125em auto;
 }
 ol {
   list-style: none;
@@ -27,10 +46,7 @@ ul {
   list-style: none;
 }
 
-nav #login-form {
-  display: none;
-}
-nav #new_user {
+nav form {
   display: none;
 }
 
@@ -43,18 +59,15 @@ nav #new_user {
   padding: 1em;
   width: 70%;
 }
-.answer-show {
-  background-color: #BCE;
-  border: 2px solid black;
+.answer {
+  background-color: #CDF;
   border-radius: 0.5em;
-  margin: 1em auto;
   padding: 1em;
-  width: 70%;
-  list-style-type: none;
+  margin: 0.5em auto;
 }
-.question-link {
-  border: 0.25em inset #B75;
-  border-radius: 0.5em;
-  margin: 0.25em 0;
-  padding: 0.5em;
+.comment {
+  background-color: #BCE;
+  font-size: 0.75em;
+  margin-left: 2em;
+  width: 90%;
 }

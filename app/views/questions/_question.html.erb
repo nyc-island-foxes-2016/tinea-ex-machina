@@ -1,6 +1,6 @@
 <li>
   <div class="question-link">
     <h3><%= link_to question.title, question_path(question) %> </h3>
-    <div class="timestamp">Posted at <%= std_format_date(question.created_at) %></div>
+    <div class="timestamp">Posted by <%= link_to question.user.username, question.user %> at <%= std_format_date(question.created_at) %></div>
   </div>
 </li>

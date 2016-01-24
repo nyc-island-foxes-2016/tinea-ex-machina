@@ -1,7 +1,7 @@
-<div>
-  <h4>Posted by: <%= answer.user.username %></h4>
-  <%= answer.content %>
-</div>
-<%= render answer.comments %>
+<div class="answer">
+  <h4>Posted by: <%= link_to answer.user.username, answer.user %></h4>
+  <p><%= answer.content %></p>
+  <%= render answer.comments %>
 
-<%= render 'comments/form', commentable: answer %>
+  <%= render 'comments/form', commentable: answer %>
+</div>

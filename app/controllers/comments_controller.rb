@@ -11,8 +11,9 @@ class CommentsController < ApplicationController
 
   def create
     @commentable = find_commentable
-    @comment = @commentable.comments.new(params[:comment])
-    @question = Question.find_by(question_id: params[:question_id])
+    binding.pry
+    @comment = @commentable.comments.build(comment_params)
+    @question = Question.find_by(id: params[:question_id])
    if @comment.save
       flash[:success] = "Successfully saved comment."  
       redirect_to @question
@@ -30,7 +31,11 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content, :user_id)
+    comment_params = params.require(:comment).permit(:content, :user_id)
+    if current_user
+      comment_params[:user_id]=@user.id
+      return comment_params
+    end
   end
 
   def find_commentable

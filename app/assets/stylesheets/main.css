@@ -30,6 +30,9 @@ ul {
 #login-form {
   display: none;
 }
+#new_user {
+  display: none;
+}
 
 .container {
   background-color: #BCE;

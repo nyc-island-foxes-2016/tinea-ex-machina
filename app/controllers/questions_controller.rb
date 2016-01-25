@@ -2,7 +2,8 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.all.order(updated_at: :desc)
     if request.xhr?
-      render @questions.sort{|a, b| b.vote_count <=> a.vote_count}
+      render json: @questions
+    #   render @questions.sort{|a, b| b.vote_count <=> a.vote_count}
     end
   end
 

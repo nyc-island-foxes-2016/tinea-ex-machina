@@ -23,6 +23,10 @@ h3, h4 {
 fieldset {
   border-radius: 0.5em;
 }
+footer {
+  font-weight: bold;
+  text-align: center;
+}
 textarea {
   background-color: #EAEAF0;
   border: 0.125em inset #255;

@@ -22,6 +22,7 @@ class QuestionsController < ApplicationController
     else
       render :new
     end
+  end
 
   def update
     @answer = Answer.find(params[:answer_id])

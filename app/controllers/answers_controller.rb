@@ -1,8 +1,17 @@
 class AnswersController < ApplicationController
 	def create
 		@answer = Answer.new(answer_params)
-		@answer.update_attributes(user: current_user, question_id: params[:question_id])
-		redirect_to question_path(params[:question_id])
+    @question = Question.find_by(id: params[:question_id])
+
+		@answer.user = current_user
+    @answer.question = @question
+
+    if @answer.save
+      @question.touch
+  		redirect_to question_path(@question)
+    else
+      render @question
+    end
 	end
 
   private 

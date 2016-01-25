@@ -5,13 +5,9 @@ class AnswersController < ApplicationController
 
 		@answer.user = current_user
     @answer.question = @question
+    @question.touch if @answer.save
 
-    if @answer.save
-      @question.touch
-  		redirect_to question_path(@question)
-    else
-      render @question
-    end
+		redirect_to question_path(@question)
 	end
 
   private 

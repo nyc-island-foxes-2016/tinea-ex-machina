@@ -33,20 +33,19 @@ $(document).ready(function() {
     });
   });
 
-  $('.vote-question').on('submit', '.new_vote', function(submit){
-    submit.preventDefault();
-    var request_url = $(this).attr("action");
-    console.log(request_url);
+  $('.vote-question').on('submit', '.new_vote', function(event){
+    event.preventDefault();
+    var form = this;
+    var request_url = $(this).attr('action');
+    console.log($(form).attr('action'));
     $.ajax({
-      type: "POST",
-      url: request_url,
-      data: $(this).serialize(),
-      dataType: 'json'
+      url: $(form).attr('action'),
+      method: $(form).attr('method'),
+      data: $(form).serialize(),
+      dataType: 'json',
     }).done(function(response){
-      console.log(response);
-    }).fail(function(response){
-      console.log(response);
-      console.log("You suck!");
+      $('.vote-place').empty();
+      $('.vote-place').append(response);
     });
   });
 

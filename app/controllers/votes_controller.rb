@@ -12,9 +12,11 @@ class VotesController < ApplicationController
 			if @vote.save
 
 				if request.xhr?
-					binding.pry
 					puts @votable.votes.count.to_json
-					return @votable.votes.count.to_json
+			respond_to do |format|
+        format.json {render json: @votable.votes.count}
+        format.html {redirect_to @question}
+      end
 
 
 

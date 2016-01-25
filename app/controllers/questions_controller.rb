@@ -2,8 +2,21 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.all.order(updated_at: :desc)
     if request.xhr?
-      render json: @questions
-    #   render @questions.sort{|a, b| b.vote_count <=> a.vote_count}
+      respond_to do |format|
+        format.json {
+          json_questions = @questions.map { |question|
+            { id: question.id,
+              title: question.title,
+              content: question.content,
+              vote_count: question.vote_count,
+              update_time: std_format_date(question.updated_at),
+              user_id: question.user.id,
+              username: question.user.username
+              }.as_json(root: false)
+          }.to_json
+          render json: json_questions
+        }
+      end
     end
   end
 

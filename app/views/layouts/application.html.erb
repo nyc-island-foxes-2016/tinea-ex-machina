@@ -8,7 +8,7 @@
   <%= favicon_link_tag 'favicon.ico' %>
 </head>
 <body>
-  <header class="container">
+  <header class="container-nav">
     <canvas width="100" height="100" style="float:right"></canvas>
     <h1 id="logo">
       <%= link_to 'Tinea ex Machina', root_path %>
@@ -27,11 +27,12 @@
       <%= render 'users/form' %>
     </nav>
   </header>
-  <main class='container'>
+  <main class='container' id='main'>
     <%= yield %>
   </main>
-  <footer class='container'>
-    Team Moth | 
+  <footer class='container' id='footer'>
+    <h3 id='team'>Team Moth</h3>
+     | 
     <a href="http://datmar.github.io/index.html">Darius Atmar</a>
      | 
     <a href="http://bbfrancis.github.io/index.html">Bernadette Maschiocchi</a>

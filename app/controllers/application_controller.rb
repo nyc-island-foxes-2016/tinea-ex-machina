@@ -5,9 +5,14 @@ class ApplicationController < ActionController::Base
 
   before_filter :generate_blank_user
 
-  helper_method :current_user
+  helper_method :current_user, :std_format_date
   def current_user
     @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+  end
+
+  def std_format_date date
+    return "" unless date
+    date.strftime("%b %e, %Y at %l:%M %P")
   end
 
   def authorize_user!

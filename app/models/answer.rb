@@ -9,4 +9,8 @@ class Answer < ActiveRecord::Base
   def vote_count
     self.votes.count
   end
+
+  def best?
+    self == self.question.best_answer
+  end
 end

@@ -208,6 +208,11 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg
+<<<<<<< HEAD
+=======
+  pry
+  pry-nav
+>>>>>>> a0a7153d36409ba695291191e7f9db90f3be05e9
   pry-rails
   rails (= 4.2.5)
   rspec-rails

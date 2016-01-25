@@ -11,4 +11,8 @@ class Question < ActiveRecord::Base
     self.votes.count
   end
 
+  def best_answer
+    Answer.find_by(id: self.best_answer_id)
+  end
+
 end

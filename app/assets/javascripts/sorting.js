@@ -1,39 +1,40 @@
-var stdFormatDate = function(dateTime) {
-  // FROM   Sat, 23 Jan 2016 04:27:44 UTC +00:00
-  // TO     Jan 23 2016 04:27 AM
-  var newDate = /\d{2} {1}[A-Z]{1}[a-z]{2} \d{4}/.exec(dateTime);
-  var hour = /\d{2}\:/.exec(dateTime).join().substr(0, 2);
-  var newTime = /\:\d{2}/.exec(dateTime);
-  if(hour > 12) {
-    newTime = (hour - 12) + newTime + ' PM';
-  }
-  else {
-    newTime = hour + newTime + ' AM';
-  }
-  return newDate + ' ' + newTime;
-};
-
 var formatQuestAsHtml = function(question) {
   var htmlString = '<li><div class="question-link"><h3>';
   htmlString += '<a href="/questions/' + question.id + '">' + question.title + '</a>'
-  htmlString += '</h3><h4>' + question.votes.length + ' Vote</h4><div class="timestamp">Posted by ';
-  htmlString += '<a href="/users/' + quesion.user.id + '">' + question.user.username + '</a>';
-  htmlString += ' at ' + stdFormatDate(question.created_at);
+  htmlString += '</h3><h4>' + question.vote_count + ' Vote';
+  if(question.vote_count != 1) {htmlString += 's'};
+  htmlString += '</h4><div class="timestamp">Posted by ';
+  htmlString += '<a href="/users/' + question.user_id + '">' + question.username + '</a>';
+  htmlString += ' at ' + question.update_time;
   htmlString += '</div></div></li>';
   return htmlString;
 };
+
+var fillQuestIndex = function(questions) {
+  questions.forEach(function(question) {
+    $('body ol').append(formatQuestAsHtml(question));
+  });
+}
 
 $(document).ready(function() {
   $("#recent-filter").on('click', function(event) {
     event.preventDefault();
     $.ajax({
       url: '/questions',
+      dataType: 'json'
     }).done(function(response) {
       $('body ol').empty();
-      console.log(response);
-      response.forEach(function(question) {
-        $('body ol').append(formatQuestAsHtml(question));
-      });
+      fillQuestIndex(response.sort(function(a, b) {
+        if(a.update_time < b.update_time) {
+          return 1;
+        }
+        else if(a.update_time > b.update_time) {
+          return -1;
+        }
+        else {
+          return 0;
+        }
+      }));
     }).fail(function(response) {
       console.log('Bad: ' + response);
     });
@@ -42,9 +43,21 @@ $(document).ready(function() {
   $("#voted-filter").on('click', function(event) {
     event.preventDefault();
     $.ajax({
-      url: '/questions'
+      url: '/questions',
+      dataType: 'json'
     }).done(function(response) {
-      $('body ol').html(response);
+      $('body ol').empty();
+      fillQuestIndex(response.sort(function(a, b) {
+        if(a.vote_count < b.vote_count) {
+          return 1;
+        }
+        else if(a.vote_count > b.vote_count) {
+          return -1;
+        }
+        else {
+          return 0;
+        }
+      }));
     }).fail(function(response) {
       console.log('Bad: ' + response);
     });

@@ -34,3 +34,24 @@ h1 {color:#575a5b;
   margin-bottom:0.3125em;
   text-align: center;
   margin-top:0}
+#main {
+  overflow-y:scroll;
+  height: 20em;
+}
+#footer {
+    background-color: #f9f9f9;
+    color: #393d40;
+    border: 0.5em outset #B73;
+    border-radius: 0.5em;
+    box-shadow: 0.25em 0.25em 0.25em #333;
+    margin: 1em auto;
+    padding: 1em;
+    width: 80%;
+}
+#team {
+  display: inline;
+  font-weight:800;
+}
+h2 {
+    text-align: center;
+}

@@ -11,7 +11,8 @@ class QuestionsController < ApplicationController
               vote_count: question.vote_count,
               update_time: std_format_date(question.updated_at),
               user_id: question.user.id,
-              username: question.user.username
+              username: question.user.username,
+              trendiness: question.comments.count + question.answers.count
               }.as_json(root: false)
           }.to_json
           render json: json_questions

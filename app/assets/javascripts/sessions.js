@@ -32,4 +32,20 @@ $(document).ready(function() {
       console.log('Bad: ' + response);
     });
   });
+
+  $('.vote-question').on('submit', '.new_vote', function(event){
+    event.preventDefault();
+    var form = this;
+    var request_url = $(this).attr('action');
+    $.ajax({
+      url: $(form).attr('action'),
+      method: $(form).attr('method'),
+      data: $(form).serialize(),
+      dataType: 'json',
+    }).done(function(response){
+      $('.vote-place').empty();
+      $('.vote-place').append(response);
+    });
+  });
+
 });

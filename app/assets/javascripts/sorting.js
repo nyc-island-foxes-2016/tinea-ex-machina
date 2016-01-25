@@ -14,7 +14,21 @@ var fillQuestIndex = function(questions) {
   questions.forEach(function(question) {
     $('body ol').append(formatQuestAsHtml(question));
   });
-}
+};
+
+var sortQuestions = function(questions, property) {
+  return questions.sort(function(a, b) {
+    if(a[property] < b[property]) {
+      return 1;
+    }
+    else if(a[property] > b[property]) {
+      return -1;
+    }
+    else {
+      return 0;
+    }
+  });
+};
 
 $(document).ready(function() {
   $("#recent-filter").on('click', function(event) {
@@ -24,17 +38,7 @@ $(document).ready(function() {
       dataType: 'json'
     }).done(function(response) {
       $('body ol').empty();
-      fillQuestIndex(response.sort(function(a, b) {
-        if(a.update_time < b.update_time) {
-          return 1;
-        }
-        else if(a.update_time > b.update_time) {
-          return -1;
-        }
-        else {
-          return 0;
-        }
-      }));
+      fillQuestIndex(sortQuestions(response, 'created_date'));
     }).fail(function(response) {
       console.log('Bad: ' + response);
     });
@@ -47,17 +51,7 @@ $(document).ready(function() {
       dataType: 'json'
     }).done(function(response) {
       $('body ol').empty();
-      fillQuestIndex(response.sort(function(a, b) {
-        if(a.vote_count < b.vote_count) {
-          return 1;
-        }
-        else if(a.vote_count > b.vote_count) {
-          return -1;
-        }
-        else {
-          return 0;
-        }
-      }));
+      fillQuestIndex(sortQuestions(response, 'vote_count'));
     }).fail(function(response) {
       console.log('Bad: ' + response);
     });
@@ -70,17 +64,7 @@ $(document).ready(function() {
       dataType: 'json'
     }).done(function(response) {
       $('body ol').empty();
-      fillQuestIndex(response.sort(function(a, b) {
-        if(a.trendiness < b.trendiness) {
-          return 1;
-        }
-        else if(a.trendiness > b.trendiness) {
-          return -1;
-        }
-        else {
-          return 0;
-        }
-      }));
+      fillQuestIndex(sortQuestions(response, 'trendiness'));
     }).fail(function(response) {
       console.log('Bad: ' + response);
     });

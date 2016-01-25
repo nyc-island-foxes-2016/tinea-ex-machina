@@ -37,7 +37,6 @@ $(document).ready(function() {
     event.preventDefault();
     var form = this;
     var request_url = $(this).attr('action');
-    console.log($(form).attr('action'));
     $.ajax({
       url: $(form).attr('action'),
       method: $(form).attr('method'),
@@ -48,8 +47,5 @@ $(document).ready(function() {
       $('.vote-place').append(response);
     });
   });
-
-
-
 
 });

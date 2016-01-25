@@ -10,20 +10,13 @@ class VotesController < ApplicationController
 			end
 			@question = Question.find_by(id: params[:question_id])
 			if @vote.save
-
 				if request.xhr?
 					puts @votable.votes.count.to_json
-			respond_to do |format|
-        format.json {render json: @votable.votes.count}
-        format.html {redirect_to @question}
-      end
-
-
-
-
-
+					respond_to do |format|
+						format.json {render json: @votable.votes.count}
+						format.html {redirect_to @question}
+					end
 				else
-					puts ("Nojson")
 					redirect_to @question
 				end
 			else

@@ -62,4 +62,27 @@ $(document).ready(function() {
       console.log('Bad: ' + response);
     });
   });
+
+  $("#trending-filter").on('click', function(event) {
+    event.preventDefault();
+    $.ajax({
+      url: '/questions',
+      dataType: 'json'
+    }).done(function(response) {
+      $('body ol').empty();
+      fillQuestIndex(response.sort(function(a, b) {
+        if(a.trendiness < b.trendiness) {
+          return 1;
+        }
+        else if(a.trendiness > b.trendiness) {
+          return -1;
+        }
+        else {
+          return 0;
+        }
+      }));
+    }).fail(function(response) {
+      console.log('Bad: ' + response);
+    });
+  });
 });
